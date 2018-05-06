@@ -394,10 +394,10 @@ printf "\n --- created archive --- \n"
 
 date
 printf "\n --- install network --- \n"
-while ! composer runtime install -c admin@blockchain-network -n vehicle-manufacture-network; do
-echo sleeping to retry runtime install
-sleep 30s
-done
+#while ! composer runtime install -c admin@blockchain-network -n vehicle-manufacture-network; do
+#echo sleeping to retry runtime install
+#sleep 30s
+#done
 date
 printf "\n --- installed network --- \n"
 
@@ -407,10 +407,11 @@ update_status
 date
 printf "\n --- start network --- \n"
 
-while ! composer network start -c admin@blockchain-network -a vehicle-manufacture-network.bna -A admin -C ./credentials/admin-pub.pem -f delete_me.card; do
-echo sleeping to retry network start
-sleep 30s
-done
+composer network start -c admin@blockchain-network -a vehicle-manufacture-network.bna -A admin -C ./credentials/admin-pub.pem -f delete_me.card
+#while ! composer network start -c admin@blockchain-network -a vehicle-manufacture-network.bna -A admin -C ./credentials/admin-pub.pem -f delete_me.card; do
+#echo sleeping to retry network start
+#sleep 30s
+#done
 
 export COMPLETED_STEP="3"
 update_status

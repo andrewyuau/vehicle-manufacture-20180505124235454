@@ -407,7 +407,7 @@ update_status
 date
 printf "\n --- start network --- \n"
 
-composer network start -c admin@blockchain-network -a vehicle-manufacture-network.bna -A admin -C ./credentials/admin-pub.pem -f delete_me.card
+#composer network start -c admin@blockchain-network -a vehicle-manufacture-network.bna -A admin -C ./credentials/admin-pub.pem -f delete_me.card
 #while ! composer network start -c admin@blockchain-network -a vehicle-manufacture-network.bna -A admin -C ./credentials/admin-pub.pem -f delete_me.card; do
 #echo sleeping to retry network start
 #sleep 30s

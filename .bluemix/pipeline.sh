@@ -262,8 +262,8 @@ printf "\n --- Got service credentials ---\n"
   printf "\n ---- Install composer-cli and composer-wallet-cloudant ----- \n "
 
   npm install -g composer-cli@0.18.1 @ampretia/composer-wallet-cloudant
-  npm -g uninstall grpc 
-  npm -g install grpc@1.9.1
+  npm --prefix /home/pipeline/.nvm/versions/node/v8.11.1/lib/node_modules/composer-cli/ uninstall grpc 
+  npm --prefix /home/pipeline/.nvm/versions/node/v8.11.1/lib/node_modules/composer-cli/ install grpc@1.9.1
   composer -v
 
   date
@@ -425,7 +425,7 @@ date
 printf "\n --- import business network card --- \n"
 
 composer card create -n vehicle-manufacture-network -p ./config/connection-profile.json -u admin -c ./credentials/admin-pub.pem -k ./credentials/admin-priv.pem
-
+composer card delete -n admin@vehicle-manufacture-network.card
 composer card import -f ./admin@vehicle-manufacture-network.card
 
 while ! composer network ping -c admin@vehicle-manufacture-network; do sleep 5; done

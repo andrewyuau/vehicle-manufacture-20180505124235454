@@ -429,7 +429,7 @@ composer card create -n vehicle-manufacture-network -p ./config/connection-profi
 #composer card delete -n admin@vehicle-manufacture-network.card
 composer card import -f ./admin@vehicle-manufacture-network.card
 
-while ! composer network ping -c admin@vehicle-manufacture-network; do sleep 5; done
+#while ! composer network ping -c admin@vehicle-manufacture-network; do sleep 5; done
 
 date
 printf "\n --- imported business network card --- \n"
